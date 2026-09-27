@@ -1,3 +1,4 @@
+
 "use client";
 
 import { FormEvent, useState } from "react";
@@ -67,13 +68,13 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#07111f] text-white">
       <div className="grid min-h-screen lg:grid-cols-2">
-        <section className="relative hidden overflow-hidden lg:flex lg:flex-col lg:justify-between border-r border-white/10 bg-[#091525] p-12 xl:p-16">
+        <section className="relative hidden overflow-hidden border-r border-white/10 bg-[#091525] p-12 lg:flex lg:flex-col lg:justify-between xl:p-16">
           <div className="absolute -left-32 top-20 h-96 w-96 rounded-full bg-blue-600/20 blur-3xl" />
           <div className="absolute -right-32 bottom-10 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl" />
 
           <div className="relative z-10">
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 font-bold shadow-lg shadow-blue-600/30">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 font-bold shadow-lg shadow-blue-600/30 transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-blue-500/50">
                 AP
               </div>
               <div>
@@ -84,14 +85,16 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 max-w-xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1.5 text-xs font-medium text-blue-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1.5 text-xs font-medium text-blue-300 transition duration-300 hover:-translate-y-0.5 hover:border-blue-400/40 hover:bg-blue-500/15 hover:shadow-lg hover:shadow-blue-500/10">
+              <span className="h-1.5 w-1.5 rounded-full bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.8)]" />
               Built for modern partnerships
             </div>
 
             <h1 className="text-5xl font-bold leading-[1.08] tracking-tight xl:text-6xl">
               Grow your reach.
-              <span className="block text-blue-400">Track your impact.</span>
+              <span className="block text-blue-400 transition duration-500 hover:text-cyan-300">
+                Track your impact.
+              </span>
             </h1>
 
             <p className="mt-6 max-w-lg text-base leading-7 text-slate-400">
@@ -100,17 +103,31 @@ export default function Home() {
             </p>
 
             <div className="mt-10 grid max-w-lg grid-cols-3 gap-3">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur">
-                <p className="text-2xl font-semibold">24/7</p>
-                <p className="mt-1 text-xs text-slate-500">Access</p>
+              <div className="group cursor-default rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur transition duration-300 hover:-translate-y-2 hover:border-blue-500/30 hover:bg-blue-500/[0.06] hover:shadow-xl hover:shadow-blue-900/20">
+                <p className="text-2xl font-semibold transition duration-300 group-hover:text-blue-300">
+                  24/7
+                </p>
+                <p className="mt-1 text-xs text-slate-500 transition group-hover:text-slate-300">
+                  Access
+                </p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur">
-                <p className="text-2xl font-semibold">100%</p>
-                <p className="mt-1 text-xs text-slate-500">Centralized</p>
+
+              <div className="group cursor-default rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur transition duration-300 hover:-translate-y-2 hover:border-cyan-500/30 hover:bg-cyan-500/[0.06] hover:shadow-xl hover:shadow-cyan-900/20">
+                <p className="text-2xl font-semibold transition duration-300 group-hover:text-cyan-300">
+                  100%
+                </p>
+                <p className="mt-1 text-xs text-slate-500 transition group-hover:text-slate-300">
+                  Centralized
+                </p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur">
-                <p className="text-2xl font-semibold">Live</p>
-                <p className="mt-1 text-xs text-slate-500">Insights</p>
+
+              <div className="group cursor-default rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur transition duration-300 hover:-translate-y-2 hover:border-blue-500/30 hover:bg-blue-500/[0.06] hover:shadow-xl hover:shadow-blue-900/20">
+                <p className="text-2xl font-semibold transition duration-300 group-hover:text-blue-300">
+                  Live
+                </p>
+                <p className="mt-1 text-xs text-slate-500 transition group-hover:text-slate-300">
+                  Insights
+                </p>
               </div>
             </div>
           </div>
@@ -124,7 +141,7 @@ export default function Home() {
           <div className="w-full max-w-md">
             <div className="mb-8 lg:hidden">
               <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 font-bold">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 font-bold shadow-lg shadow-blue-600/20 transition duration-300 hover:-translate-y-1 hover:scale-105">
                   AP
                 </div>
                 <div>
@@ -155,10 +172,10 @@ export default function Home() {
                   setIsRegister(false);
                   setMessage("");
                 }}
-                className={`rounded-lg px-4 py-2.5 text-sm font-medium transition ${
+                className={`rounded-lg px-4 py-2.5 text-sm font-medium transition duration-300 ${
                   !isRegister
                     ? "bg-white text-slate-900 shadow-lg"
-                    : "text-slate-500 hover:text-white"
+                    : "text-slate-500 hover:bg-white/[0.04] hover:text-white"
                 }`}
               >
                 Sign In
@@ -170,10 +187,10 @@ export default function Home() {
                   setIsRegister(true);
                   setMessage("");
                 }}
-                className={`rounded-lg px-4 py-2.5 text-sm font-medium transition ${
+                className={`rounded-lg px-4 py-2.5 text-sm font-medium transition duration-300 ${
                   isRegister
                     ? "bg-white text-slate-900 shadow-lg"
-                    : "text-slate-500 hover:text-white"
+                    : "text-slate-500 hover:bg-white/[0.04] hover:text-white"
                 }`}
               >
                 Register
@@ -190,9 +207,9 @@ export default function Home() {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Anmol Srivastava"
+                    placeholder="Your Name"
                     required
-                    className="h-12 w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-blue-500 focus:bg-white/[0.06]"
+                    className="h-12 w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 text-sm text-white outline-none transition duration-300 placeholder:text-slate-600 hover:border-white/20 hover:bg-white/[0.05] focus:border-blue-500 focus:bg-white/[0.06] focus:shadow-lg focus:shadow-blue-500/10"
                   />
                 </div>
               )}
@@ -207,7 +224,7 @@ export default function Home() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
                   required
-                  className="h-12 w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-blue-500 focus:bg-white/[0.06]"
+                  className="h-12 w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 text-sm text-white outline-none transition duration-300 placeholder:text-slate-600 hover:border-white/20 hover:bg-white/[0.05] focus:border-blue-500 focus:bg-white/[0.06] focus:shadow-lg focus:shadow-blue-500/10"
                 />
               </div>
 
@@ -221,7 +238,7 @@ export default function Home() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                   required
-                  className="h-12 w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-blue-500 focus:bg-white/[0.06]"
+                  className="h-12 w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 text-sm text-white outline-none transition duration-300 placeholder:text-slate-600 hover:border-white/20 hover:bg-white/[0.05] focus:border-blue-500 focus:bg-white/[0.06] focus:shadow-lg focus:shadow-blue-500/10"
                 />
               </div>
 
@@ -234,14 +251,18 @@ export default function Home() {
               <button
                 type="submit"
                 disabled={loading}
-                className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-blue-600 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-500 hover:shadow-blue-600/30 disabled:cursor-not-allowed disabled:opacity-60"
+                className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-blue-600 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition duration-300 hover:-translate-y-1 hover:bg-blue-500 hover:shadow-xl hover:shadow-blue-600/30 active:translate-y-0 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {loading
                   ? "Please wait..."
                   : isRegister
                   ? "Create Account"
                   : "Sign In"}
-                {!loading && <span className="transition group-hover:translate-x-1">→</span>}
+                {!loading && (
+                  <span className="transition duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                )}
               </button>
             </form>
 
